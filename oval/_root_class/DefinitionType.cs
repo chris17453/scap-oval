@@ -5,20 +5,24 @@ using System.Xml.Serialization;
     [XmlTypeAttribute(Namespace="http://oval.mitre.org/XMLSchema/oval-definitions-5")]
     [XmlRootAttribute("definition", Namespace="http://oval.mitre.org/XMLSchema/oval-definitions-5", IsNullable=false)]
     public class DefinitionType {
-        private SignatureType signatureField;
         private MetadataType metadataField;
-        private string[] notesField;
         private CriteriaType criteriaField;
         private string idField;
         private string versionField;
-    [XmlIgnore]
-    public ClassEnumeration? classField       { get; set; }
-    public bool classSpecified=>classField.HasValue;
-    [XmlIgnore]
-    public bool? deprecatedField       { get; set; }
-    public bool deprecatedSpecified=>deprecatedField.HasValue;
+        [XmlIgnore]
+        public ClassEnumeration? classField       { get; set; }
+        public bool          classSpecified=>classField.HasValue;
+        [XmlIgnore]
+        public bool?         deprecatedField       { get; set; }
+        public bool          deprecatedSpecified=>deprecatedField.HasValue;
+        [XmlIgnore]
+        public string[]      notesField         { get; set; }
+        public bool          notesSpecified     { get { if(notesField==null) return false; return true; } }
+        [XmlIgnore]
+        public SignatureType signatureField     { get; set; }
+        public bool          signatureSpecified { get { if(signatureField==null) return false; return true; } }
+
         public DefinitionType() {
-            //this.deprecatedField = false;
         }
         [XmlElementAttribute(Namespace="http://www.w3.org/2000/09/xmldsig#")]
         public SignatureType Signature {
@@ -37,7 +41,7 @@ using System.Xml.Serialization;
                 this.metadataField = value;
             }
         }
-          [XmlArrayItemAttribute("note", IsNullable=false)]
+        [XmlArrayItemAttribute("note", IsNullable=false)]
         public string[] notes {
             get {
                 return this.notesField;
