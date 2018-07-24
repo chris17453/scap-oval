@@ -1,5 +1,5 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workbench ActiveDocument="oval/_root_class/TestType.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="oval/_root_class/NotesType.cs">
     <Files>
       <File FileName="README.md" Line="1" Column="1" />
       <File FileName="wrapper/wrapper.cs" Line="1" Column="1" />
@@ -8,7 +8,8 @@
       <File FileName="oval/oval-schema/oval_results.cs" Line="1" Column="1" />
       <File FileName="oval/oval-schema/oval_system_characteristics.cs" Line="1" Column="1" />
       <File FileName="oval/_derived_class/TestType/patch_test.cs" Line="7" Column="37" />
-      <File FileName="oval/_root_class/TestType.cs" Line="7" Column="18" />
+      <File FileName="oval/_root_class/TestType.cs" Line="40" Column="61" />
+      <File FileName="oval/_root_class/NotesType.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

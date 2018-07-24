@@ -6,7 +6,7 @@ using System.Xml.Serialization;
     [XmlRootAttribute("test", Namespace="http://oval.mitre.org/XMLSchema/oval-definitions-5", IsNullable=false)]
     public class TestType {
         private SignatureType signatureField;
-        private string[] notesField;
+        private NotesType[] notesField;
         private string idField;
         private string versionField;
     [XmlIgnore]
@@ -37,8 +37,8 @@ using System.Xml.Serialization;
             }
         }
         [XmlArrayAttribute(Namespace="http://oval.mitre.org/XMLSchema/oval-common-5")]
-        [XmlArrayItemAttribute("notes", IsNullable=false)]
-        public string[] notes {
+        [XmlArrayItemAttribute("notes",Type=typeof(NotesType))]
+        public NotesType[] notes {
             get {
                 return this.notesField;
             }
