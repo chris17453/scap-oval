@@ -14,7 +14,6 @@ using System.Xml.Serialization;
         public SignatureType signatureField;
         public bool   SignatureSpecified { get { if(signatureField==null) return false; return true; } }
 
-        [XmlArray(Namespace="http://oval.mitre.org/XMLSchema/oval-common-5")]
         [XmlArrayItem("note", IsNullable=false)] 
         public string[] notes { get { return this.notesField; } set { this.notesField = value; } }
         [XmlIgnore]

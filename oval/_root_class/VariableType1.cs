@@ -24,7 +24,7 @@ using System.Xml.Serialization;
                 this.valueField = value;
             }
         }
-        [XmlArrayItemAttribute("note", Namespace="http://oval.mitre.org/XMLSchema/oval-common-5", IsNullable=false)]
+        [XmlArrayItemAttribute("note", IsNullable=false)]
         public string[] notes {
             get {
                 return this.notesField;

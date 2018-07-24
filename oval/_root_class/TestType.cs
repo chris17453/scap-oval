@@ -43,7 +43,6 @@ using System.Xml.Serialization;
                 this.signatureField = value;
             }
         }
-        //[XmlArrayAttribute(Namespace="http://oval.mitre.org/XMLSchema/oval-common-5")]
         [XmlArrayItemAttribute("note")]
         public string[] notes {
             get {
