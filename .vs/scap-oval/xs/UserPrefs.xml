@@ -1,10 +1,11 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workbench ActiveDocument="oval/oval-schema/oval_definitions.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="oval/_derived_class/NotesType/notes.cs">
     <Files>
       <File FileName="README.md" Line="1" Column="1" />
-      <File FileName="oval/_root_class/DefinitionType.cs" Line="40" Column="7" />
-      <File FileName="oval/_root_class/DefinitionType1.cs" Line="1" Column="1" />
+      <File FileName="oval/_root_class/DefinitionType.cs" Line="26" Column="1" />
+      <File FileName="oval/_root_class/DefinitionType1.cs" Line="5" Column="47" />
       <File FileName="oval/oval-schema/oval_definitions.cs" Line="18" Column="27" />
+      <File FileName="oval/_derived_class/NotesType/notes.cs" Line="9" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
