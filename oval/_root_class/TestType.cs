@@ -37,7 +37,7 @@ using System.Xml.Serialization;
             }
         }
         [XmlArrayAttribute(Namespace="http://oval.mitre.org/XMLSchema/oval-common-5")]
-        [XmlArrayItemAttribute("notes",Type=typeof(NotesType))]
+        [XmlArrayItemAttribute("note")]
         public NotesType[] notes {
             get {
                 return this.notesField;
