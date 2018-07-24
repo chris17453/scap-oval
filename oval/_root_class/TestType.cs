@@ -5,23 +5,30 @@ using System.Xml.Serialization;
     [XmlTypeAttribute(Namespace="http://oval.mitre.org/XMLSchema/oval-definitions-5")]
     [XmlRootAttribute("test", Namespace="http://oval.mitre.org/XMLSchema/oval-definitions-5", IsNullable=false)]
     public class TestType {
-        private SignatureType signatureField;
-        private NotesType[] notesField;
+        [XmlIgnore]
+        public ExistenceEnumeration? check_existenceField       { get; set; }
+        public bool check_existenceSpecified=>check_existenceField.HasValue;
+        [XmlIgnore]
+        public CheckEnumeration? checkField       { get; set; }
+        public bool checkSpecified=>checkField.HasValue;
+        [XmlIgnore]
+        public OperatorEnumeration? state_operatorField       { get; set; }
+        public bool state_operatorSpecified=>state_operatorField.HasValue;
+        private string commentField;
+        [XmlIgnore]
+        public bool? deprecatedField       { get; set; }
+        public bool deprecatedSpecified=>deprecatedField.HasValue;
+        [XmlIgnore]
+        public string[] notesField;
+        public bool noteSpecified { get { if(null==notesField) return false; return true; } }
+        [XmlIgnore]
+        public SignatureType signatureField;
+        public bool signatureSpecified { get { if(null==signatureField) return false; return true; } }
+
         private string idField;
         private string versionField;
-    [XmlIgnore]
-    public ExistenceEnumeration? check_existenceField       { get; set; }
-    public bool check_existenceSpecified=>check_existenceField.HasValue;
-    [XmlIgnore]
-    public CheckEnumeration? checkField       { get; set; }
-    public bool checkSpecified=>checkField.HasValue;
-    [XmlIgnore]
-    public OperatorEnumeration? state_operatorField       { get; set; }
-    public bool state_operatorSpecified=>state_operatorField.HasValue;
-        private string commentField;
-    [XmlIgnore]
-    public bool? deprecatedField       { get; set; }
-    public bool deprecatedSpecified=>deprecatedField.HasValue;
+
+
         public TestType() {
             /*this.check_existenceField = ExistenceEnumeration.at_least_one_exists;
             this.state_operatorField = OperatorEnumeration.AND;
@@ -36,9 +43,9 @@ using System.Xml.Serialization;
                 this.signatureField = value;
             }
         }
-        [XmlArrayAttribute(Namespace="http://oval.mitre.org/XMLSchema/oval-common-5")]
+        //[XmlArrayAttribute(Namespace="http://oval.mitre.org/XMLSchema/oval-common-5")]
         [XmlArrayItemAttribute("note")]
-        public NotesType[] notes {
+        public string[] notes {
             get {
                 return this.notesField;
             }
