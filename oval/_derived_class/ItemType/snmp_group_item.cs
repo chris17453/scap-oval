@@ -1,0 +1,29 @@
+﻿using System;
+using System.Xml; 
+using System.Xml.Serialization; 
+ namespace oval{       [SerializableAttribute]
+    [XmlTypeAttribute(AnonymousType=true, Namespace="http://oval.mitre.org/XMLSchema/oval-system-characteristics-5#asa")]
+    [XmlRootAttribute(Namespace="http://oval.mitre.org/XMLSchema/oval-system-characteristics-5#asa", IsNullable=false)]
+    public class snmp_group_item : ItemType {
+        private EntityItemStringType nameField;
+        private EntityItemSNMPSecLevelStringType2 snmpv3_sec_levelField;
+        public EntityItemStringType name {
+            get {
+                return this.nameField;
+            }
+            set {
+                this.nameField = value;
+            }
+        }
+        public EntityItemSNMPSecLevelStringType2 snmpv3_sec_level {
+            get {
+                return this.snmpv3_sec_levelField;
+            }
+            set {
+                this.snmpv3_sec_levelField = value;
+            }
+        }
+    }
+
+}
+

@@ -1,0 +1,21 @@
+﻿using System;
+using System.Xml; 
+using System.Xml.Serialization; 
+ namespace oval{       [SerializableAttribute]
+    [XmlTypeAttribute(Namespace="http://oval.mitre.org/XMLSchema/oval-definitions-5")]
+    //[XmlRoot ("split")]
+    public class SplitFunctionType : recursive_base  {
+        private string delimiterField;
+        [XmlAttribute]
+        public string delimiter {
+            get {
+                return this.delimiterField;
+            }
+            set {
+                this.delimiterField = value;
+            }
+        }
+    }
+
+}
+
